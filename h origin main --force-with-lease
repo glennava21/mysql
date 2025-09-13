@@ -1,0 +1,115 @@
+[33mcommit a314a92dbefdfdf12d095d25afe5d489315e5ac4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author:     glennava21 <GLENDERNAVARRO@GMAIL.COM>
+AuthorDate: Sat Sep 13 21:30:00 2025 -0500
+Commit:     glennava21 <glendernavarro@gmail.com>
+CommitDate: Sat Sep 13 21:30:00 2025 -0500
+
+    Create README.md
+
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2be55f0[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,101 @@[m
+[32m+[m[32m 🏢 Sistema de Gestión de Coworking[m
+[32m+[m
+[32m+[m[32m**Autor:** Samuel Alexander Rodríguez Becerra[m[41m  [m
+[32m+[m
+[32m+[m[32mEste proyecto consiste en el diseño y desarrollo de una **base de datos relacional en MySQL** para administrar eficientemente todas las operaciones de un espacio de coworking moderno.[m[41m  [m
+[32m+[m[32mLa solución es **robusta, escalable** y refleja escenarios reales de administración de usuarios, reservas, membresías, pagos y control de accesos.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🚀 Objetivo[m
+[32m+[m[32mFacilitar la **gestión integral de un coworking**:[m[41m  [m
+[32m+[m[32m- Control de usuarios y empresas.[m[41m  [m
+[32m+[m[32m- Administración de membresías.[m[41m  [m
+[32m+[m[32m- Gestión de espacios y reservas.[m[41m  [m
+[32m+[m[32m- Facturación y pagos.[m[41m  [m
+[32m+[m[32m- Registro de accesos y auditoría de eventos.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🗂️ Estructura de la Base de Datos[m
+[32m+[m
+[32m+[m[32m### Tablas principales[m
+[32m+[m[32m- **empresas**: Información de empresas asociadas.[m
+[32m+[m[32m- **usuarios**: Datos de usuarios individuales, con relación opcional a empresas.[m
+[32m+[m[32m- **roles** y **usuario_roles**: Sistema de permisos y roles (Admin, Staff, Cliente, Corporativo).[m
+[32m+[m[32m- **logs**: Registro de eventos importantes.[m
+[32m+[m
+[32m+[m[32m### Membresías[m
+[32m+[m[32m- **membresias_tipo**: Catálogo de tipos de membresía (Mensual, Anual, Premium, etc.).[m
+[32m+[m[32m- **usuario_membresias**: Histórico de membresías de cada usuario.[m
+[32m+[m
+[32m+[m[32m### Espacios y reservas[m
+[32m+[m[32m- **espacios**: Tipos de espacios: escritorios, oficinas privadas, salas de reuniones o eventos.[m
+[32m+[m[32m- **reservas**: Reservas de espacios, incluyendo estado y duración.[m
+[32m+[m[32m- **reserva_servicios**: Servicios extra asociados a una reserva.[m
+[32m+[m
+[32m+[m[32m### Servicios[m
+[32m+[m[32m- **servicios**: Catálogo de servicios adicionales (Locker, Café, Parking…).[m
+[32m+[m[32m- **usuario_servicios**: Servicios contratados de forma permanente.[m
+[32m+[m
+[32m+[m[32m### Facturación y pagos[m
+[32m+[m[32m- **facturas**: Registro de facturación de membresías y reservas.[m
+[32m+[m[32m- **pagos**: Control de pagos realizados, pendientes o fallidos.[m
+[32m+[m
+[32m+[m[32m### Seguridad y control[m
+[32m+[m[32m- **registros_acceso**: Entradas y salidas de usuarios mediante RFID, QR o registro manual.[m
+[32m+[m[32m- **accesos_fallidos**: Intentos de acceso no autorizados.[m
+[32m+[m[32m- **auditoria**: Historial de cambios críticos en el sistema.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 💾 Datos de prueba incluidos[m
+[32m+[m[32mEl script incluye datos de ejemplo:[m
+[32m+[m[32m- 5 empresas y 10 usuarios con distintos roles.[m
+[32m+[m[32m- 6 tipos de membresía y múltiples estados (Activa, Suspendida, Vencida).[m
+[32m+[m[32m- Espacios de trabajo y reservas en diferentes estados (Confirmada, Cancelada, NoShow).[m
+[32m+[m[32m- Servicios adicionales, facturas y pagos de prueba.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🛠️ Requisitos[m
+[32m+[m
+[32m+[m[32m- **MySQL 8.x** o compatible.[m
+[32m+[m[32m- Herramienta de gestión (por ejemplo, MySQL Workbench o phpMyAdmin).[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## ▶️ Instalación y Uso[m
+[32m+[m
+[32m+[m[32m1. **Clonar o descargar** este repositorio.[m[41m  [m
+[32m+[m[32m2. Importar el archivo `coworking.sql` en tu servidor MySQL:[m
+[32m+[m[32m   ```bash[m
+[32m+[m[32m   mysql -u usuario -p < coworking.sql[m
+[32m+[m[32m   ```[m
+[32m+[m[32m3. Verificar que la base de datos y tablas se hayan creado:[m
+[32m+[m[32m   ```sql[m
+[32m+[m[32m   SHOW DATABASES;[m
+[32m+[m[32m   USE coworking;[m
+[32m+[m[32m   SHOW TABLES;[m
+[32m+[m[32m   ```[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🔍 Consultas de ejemplo[m
+[32m+[m[32mAlgunas consultas útiles que ya vienen en el script:[m
+[32m+[m[32m- Usuarios con membresía activa.[m
+[32m+[m[32m- Usuarios que nunca han hecho una reserva.[m
+[32m+[m[32m- Reservas con servicios adicionales contratados.[m
+[32m+[m[32m- Reporte de ingresos mensuales por pagos.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🛡️ Recomendaciones[m
+[32m+[m[32m- Implementar **backups automáticos** para proteger la información.[m
+[32m+[m[32m- Usar **roles y privilegios de MySQL** para limitar accesos.[m
+[32m+[m[32m- Añadir **validaciones y triggers** si se requiere mayor consistencia de datos.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 📄 Licencia[m
+[32m+[m[32m... (1 línea restante)[m
